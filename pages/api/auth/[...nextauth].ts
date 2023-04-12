@@ -6,7 +6,7 @@ import {compare} from 'bcrypt'
 export default NextAuth({
     providers:[
         Credentials({
-            id: 'credentials',
+            id: 'credentials', //id used in the sign in function from next
             name: 'Credentials',
             credentials: {
                 email:{
@@ -52,7 +52,7 @@ export default NextAuth({
         strategy: 'jwt',
     },
     jwt : {
-        secret: process.env.NEXTAUTH_JWT_SECRETT
+        secret: process.env.NEXTAUTH_JWT_SECRET
     },
     secret: process.env.NEXTAUTH_SECRET
 })
