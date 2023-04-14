@@ -1,11 +1,32 @@
+import { NextPageContext } from "next"
+import { getSession, signOut} from "next-auth/react"
+import useCurrentUser from "@/hooks/useCurrentUser";
+import Navbar from "@/components/Navbar";
 
 
+//use for protecting the client end
+export async function getServerSideProps(context: NextPageContext) {
+  const session = await getSession(context);
 
-export default function Home() {
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/auth',
+        permanent: false,
+      }
+    }
+  }
+
+  return {
+    props: {}
+  }
+}
+
+export default function Home(){
+
   return (
     <>
-     
-      <h1 className="font-bold text-white">Netflix Clone</h1>
+      <Navbar/>
     </>
   )
 }
