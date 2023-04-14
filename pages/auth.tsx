@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import axios from 'axios';
 import { useCallback, useState } from 'react';
 import {  signIn } from 'next-auth/react';
