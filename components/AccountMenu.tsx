@@ -23,7 +23,7 @@ export default function AccountMenu({visible}:AccountMenuProps){
                 </div>
                 <hr className="bg-gray-600 border-0 h-px my-4" />
                 <div className="px-3 text-center text-white text-sm hover:underline" onClick={()=>signOut()}>
-                    Sign Out of Netflix
+                    Sign Out of Movies
                 </div>
             </div>
         </div>
